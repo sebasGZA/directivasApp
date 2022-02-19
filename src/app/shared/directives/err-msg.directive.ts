@@ -10,11 +10,11 @@ export class ErrMsgDirective implements OnInit, OnChanges {
 
   htmlElement: ElementRef<HTMLElement>
   @Input() set color(valor: string) {
-    this.htmlElement.nativeElement.style.color = valor
+    this.setColor()
     this._color = valor
   }
   @Input() set mensaje(valor: string) {
-    this.htmlElement.nativeElement.innerText = valor
+    this.setMensaje()
     this._mensaje = valor
   }
   constructor(private el: ElementRef<HTMLElement>) {
@@ -26,6 +26,8 @@ export class ErrMsgDirective implements OnInit, OnChanges {
     // console.log(this.mensaje)
     // this.setMensaje()
     // this.setColor()
+    this.setEstilo()
+    this.setColor()
     this.setEstilo()
   }
 
@@ -48,13 +50,12 @@ export class ErrMsgDirective implements OnInit, OnChanges {
     console.log(changes)
   }
 
-  // setMensaje(): void {
-  //   this.htmlElement.nativeElement.innerText = this.mensaje
-  //   this.htmlElement.nativeElement.classList.add('form-text')
-  // }
+  setMensaje(): void {
+    this.htmlElement.nativeElement.innerText = this._mensaje
+  }
 
-  // setColor(): void {
-  //   this.htmlElement.nativeElement.style.color = this.color
-  // }
+  setColor(): void {
+    this.htmlElement.nativeElement.style.color = this._color
+  }
 
 }
