@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AgregarComponent implements OnInit {
   colorDeseado: string = 'red'
   mensajeDeseado: string = 'Debe ingresar este campo'
-  
+
   miFormulario: FormGroup = this.formBuilderSvc.group({
     nombre: ['', [Validators.required]]
   })
@@ -22,5 +22,13 @@ export class AgregarComponent implements OnInit {
 
   tieneError(campo: string): boolean {
     return this.miFormulario.get(campo)?.invalid || false
+  }
+
+  cambiarNombre(){
+    this.mensajeDeseado = 'Sebastian Gomez'
+  }
+
+  cambiarColor(){
+    this.colorDeseado = 'green'
   }
 }

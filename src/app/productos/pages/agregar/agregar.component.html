@@ -1,4 +1,4 @@
-<h1 class="mt-5">Agregar Producto</h1>
+<h1 class="mt-5">Agregar Producto <small>{{mensajeDeseado}}</small></h1>
 <hr>
 <form [formGroup]="miFormulario">
     <div class="row g-3 align-items-center mb-3">
@@ -21,8 +21,11 @@
 
     <div class="row mt-2">
         <div class="col-auto">
-            <button class="btn btn-primary">
+            <button (click)="cambiarNombre()" class="btn btn-primary">
                 Guardar
+            </button> &nbsp;
+            <button (click)="cambiarColor()" class="btn btn-primary ml-1">
+                Cambiar color
             </button>
         </div>
 
