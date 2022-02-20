@@ -36,3 +36,11 @@
 
 <pre>Valid: {{miFormulario.valid}}</pre>
 <pre>Value: {{miFormulario.value | json}}</pre>
+
+<div class="row mt-5" *customIf="miFormulario.valid">
+    <div class="col">
+        <div class="alert alert-primary">
+            Todo ok!
+        </div>
+    </div>
+</div>
